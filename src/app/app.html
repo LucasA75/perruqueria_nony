@@ -2,21 +2,6 @@
 
 <link rel="stylesheet" href="app.css">
 
-<script>
-document.querySelectorAll('a[href^="#"]').forEach(link => {
-  link.addEventListener('click', (e) => {
-    const href = link.getAttribute('href');
-    if (href !== '#') {
-      e.preventDefault();
-      const target = document.querySelector(href);
-      if (target) {
-        target.scrollIntoView({ behavior: 'smooth' });
-      }
-    }
-  });
-});
-</script>
-
 <!-- HEADER -->
 <header>
   <div class="container">
