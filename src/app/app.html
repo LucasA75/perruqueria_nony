@@ -2,12 +2,27 @@
 
 <link rel="stylesheet" href="app.css">
 
+<script>
+document.querySelectorAll('a[href^="#"]').forEach(link => {
+  link.addEventListener('click', (e) => {
+    const href = link.getAttribute('href');
+    if (href !== '#') {
+      e.preventDefault();
+      const target = document.querySelector(href);
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  });
+});
+</script>
+
 <!-- HEADER -->
 <header>
   <div class="container">
     <div class="header-content">
       <a href="#" class="logo">
-        <div class="logo-icon">🐾</div>
+        <img alt="Noni's Pets Logo" class="logo-icon" src="perro_logo.svg">
         Noni's Pets
       </a>
       <nav>
@@ -147,13 +162,13 @@
         <h3>📱 Teléfono</h3>
         <p>+34 912 345 678</p>
       </div>
-      <div class="contact-item">
-        <h3>📧 Email</h3>
-        <p>info@nonygromming.com</p>
-      </div>
+      <a href="https://www.instagram.com/nonispets?igsh=MmIwendqcXJweGU4" target="_blank" alt="Instagram" class="contact-item">
+        <h3>📸 Instagram</h3>
+        <p>@nonispets</p>
+      </a>
       <div class="contact-item">
         <h3>📍 Ubicación</h3>
-        <p>Calle Principal 123<br>Madrid, España</p>
+        <p>Tabajamos en toda la RM</p>
       </div>
     </div>
     <button class="btn">📅 Agendar Mi Cita</button>
